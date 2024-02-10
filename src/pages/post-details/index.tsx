@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router'
 const PostDetailsPage: FC = () => {
 	const { postId } = useParams()
 	const navigate = useNavigate()
-	const { data, isLoading, isError } = useGetPostByIdQuery(+postId)
+	const { data, isLoading, isError } = useGetPostByIdQuery(+postId!)
 
 	const onBackButtonClick = () => {
 		navigate('/')
