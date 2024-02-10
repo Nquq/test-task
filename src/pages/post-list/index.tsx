@@ -11,7 +11,6 @@ const PostsListPage: FC = () => {
 		limit: 7,
 		start: currentPostStart,
 	})
-	const posts = data ?? []
 
 	useObserver(lastElement, isLoading, () => setCurrentPostStart(prev => prev + 7))
 
@@ -32,7 +31,7 @@ const PostsListPage: FC = () => {
 	return (
 		<>
 			<div className={styles.container}>
-				<PostRow posts={posts} />
+				<PostRow posts={data} />
 			</div>
 			<div style={{ height: 1 }} ref={lastElement}></div>
 		</>
